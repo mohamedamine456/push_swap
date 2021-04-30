@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/28 18:48:16 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/03/28 18:55:22 by mlachheb         ###   ########.fr       */
+/*   Created: 2021/04/27 07:53:12 by mlachheb          #+#    #+#             */
+/*   Updated: 2021/04/30 14:26:44 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "structs.h"
-# include <stdio.h>
-# include <stdlib.h>
+#include "stacks.h"
 
 int main(int argc, char **argv)
 {
-	t_stack		*stack_a;
-	int			i;
+	t_stack	stack_a;
+	char	**operations;
 
-	i = 1;
-	stack_a = (t_stack *)malloc(sizeof(t_stack) * (argc - 1));
-	while (argv != NULL && argv[i] != NULL)
+	operations = NULL;
+	if (argc < 2)
+		fatal();
+	else
 	{
-		stack_a[i - 1].number = atoi(argv[i]);
-		stack_a[i - 1].id_number = i - 1;
-		i++;
-	} 
-	i = 0;
-	while (i < argc - 1)
-	{
-		printf("id_number : %7d, number: %9d\n", stack_a[i].id_number, stack_a[i].number);
-		i++;
+		if (check_args(argv + 1))
+			fatal();
+		else
+		{
+			stack_a = fill_stack(argc, argv);
+
+			stack_a = sort_three(stack_a, &operations);
+			print_operations(operations);
+			ft_free_opers(operations);
+			free(stack_a.items);
+		}
 	}
 	return (0);
 }
+

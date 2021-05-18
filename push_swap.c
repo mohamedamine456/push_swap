@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 07:53:12 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/18 14:51:18 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/05/18 15:01:09 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		{
 			stack_a = fill_stack(argc, argv);
 
-			stack_a = sort_three(stack_a, &operations);
+			stack_a = sort_five(stack_a, &operations);
 			print_operations(operations);
 			ft_free_opers(operations);
 			free(stack_a.items);

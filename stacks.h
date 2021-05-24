@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:46:18 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/18 15:09:46 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/05/24 17:31:51 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,11 @@ void			move_b_a(t_stack *stack_a, t_stack *stack_b, char ***operations);
 t_stack			sort_five(t_stack stack_a, char ***operations);
 void			sort_a_b(t_stack *a, t_stack *b, char ***opers);
 void			add_operations(char ***opers, char *oper, int *op1, int *op2);
+
+
+t_stack			sort_hundred(t_stack stack_a, char ***opers);
+
+
+t_stack			sort_more(t_stack stack_a, char ***opers);
+
 #endif

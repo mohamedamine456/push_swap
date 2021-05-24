@@ -1,6 +1,6 @@
 #include "stacks.h"
 
-t_stack	sort_five(t_stack stack_a, char ***opers)
+t_stack	sort_more(t_stack stack_a, char ***opers)
 {
 	t_stack stack_b;
 

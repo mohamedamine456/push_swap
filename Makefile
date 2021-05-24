@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/24 14:34:08 by mlachheb          #+#    #+#              #
-#    Updated: 2021/05/24 16:31:50 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/05/24 17:30:22 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ PUSH_SWAP_MAIN = push_swap.c
 
 CHECKER_MAIN = checker.c
 
-PUSH_SWAP_SRC = check_ps_sort.c sort_three.c sort_five.c
+PUSH_SWAP_SRC = check_ps_sort.c sort_three.c sort_five.c\
+				sort_hundred.c sort_more.c
 
 CHECKER_SRC = read_operations.c
 
@@ -29,7 +30,8 @@ SHARED_SRC = shared/check_args.c shared/fatal.c shared/fill_stack.c\
 			 shared/check_sort.c shared/apply_operations.c\
 			 shared/copy_stack.c
 
-PUSH_SWAP_OBJ = check_ps_sort.o sort_three.o sort_five.o
+PUSH_SWAP_OBJ = check_ps_sort.o sort_three.o sort_five.o\
+				sort_hundred.o sort_more.o
 
 CHECKER_OBJ = read_operations.o
 

@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/24 15:34:32 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/05/24 18:57:07 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,6 @@ int				check_sort_ds(t_stack stack);
  */
 
 t_stack			copy_stack(t_stack a);
+void			replace_a_b(char ***opers);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 11:02:15 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/24 16:27:30 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/05/24 19:07:17 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ char		**ft_resize_opers(char **old, char *chaine)
 	new[i] = ft_strdup(chaine);
 	new[i + 1] = NULL;
 	ft_free_opers(old);
-	free(chaine);
 	return (new);
 }
 

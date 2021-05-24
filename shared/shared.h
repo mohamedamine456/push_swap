@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/04/28 12:53:04 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/05/24 15:34:32 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,11 @@ int				check_sort(t_stack stack);
 int				sorted_a_b(t_stack a, t_stack b);
 int				check_sort_as(t_stack stack);
 int				check_sort_ds(t_stack stack);
+
+/*
+ * prototypes for copy_stack.c file
+ */
+
+t_stack			copy_stack(t_stack a);
 
 #endif

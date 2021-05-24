@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   copy_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/27 07:53:12 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/24 15:36:00 by mlachheb         ###   ########.fr       */
+/*   Created: 2021/05/24 15:30:12 by mlachheb          #+#    #+#             */
+/*   Updated: 2021/05/24 15:32:52 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
+#include "shared.h"
 
-int main(int argc, char **argv)
+t_stack	copy_stack(t_stack a)
 {
-	t_stack	stack_a;
-	char	**opers;
+	t_stack temp;
+	int		i;
 
-	opers = NULL;
-	if (argc < 2)
-		fatal();
-	else
+	i = 0;
+	temp = create_stack(a.size);
+	while (i < a.size)
 	{
-		if (check_args(argv + 1))
-			fatal();
-		else
-		{
-			stack_a = fill_stack(argc, argv);
-
-			stack_a = sort_five(stack_a, &opers);
-			print_operations(opers);
-			ft_free_opers(opers);
-			free(stack_a.items);
-		}
+		temp.items[i] = a.items[i];
+		i++;
 	}
-	return (0);
+	temp.top = a.top;
+	temp.first = a.first;
+	return (temp);
 }

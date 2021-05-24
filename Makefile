@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/24 14:34:08 by mlachheb          #+#    #+#              #
-#    Updated: 2021/05/18 15:01:43 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/05/24 15:55:33 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SHARED_SRC = shared/check_args.c shared/fatal.c shared/fill_stack.c\
 			 shared/ft_atoi.c shared/ft_split.c shared/get_next_line.c\
 			 shared/helper_functions.c shared/operations.c\
 			 shared/opers_functions.c shared/sort_operations.c\
-			 shared/check_sort.c shared/apply_operations.c
+			 shared/check_sort.c shared/apply_operations.c\
+			 shared/copy_stack.c
 
 PUSH_SWAP_OBJ = sort_stack.o check_ps_sort.o sort_three.o sort_five.o
 
@@ -35,7 +36,7 @@ CHECKER_OBJ = read_operations.o
 SHARED_OBJ = check_args.o fatal.o fill_stack.o ft_atoi.o ft_split.o\
 			 get_next_line.o helper_functions.o operations.o\
 			 opers_functions.o sort_operations.o check_sort.o\
-			 apply_operations.o
+			 apply_operations.o copy_stack.o
 
 
 all: $(CHECKER_NAME)

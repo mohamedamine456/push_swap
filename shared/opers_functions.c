@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 11:02:15 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/18 14:45:42 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:27:30 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,7 @@ void	print_operations(char **opers)
 	i = 0;
 	while (opers != NULL && opers[i] != NULL)
 	{
-		printf("%9s", opers[i]);
+		printf("%s\n", opers[i]);
 		i++;
 	}
-	printf("\n");
 }

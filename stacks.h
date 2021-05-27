@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:46:18 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/24 19:14:45 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:33:13 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,30 @@ t_stack			check_ra(t_stack stack, char ***operations);
 t_stack			check_rra(t_stack stack, char ***operations);
 void			move_b_a(t_stack *stack_a, t_stack *stack_b, char ***operations);
 
+/*
+ * prototypes for sort_three.c file
+ */
+
+t_stack			sort_three(t_stack stack, char ***operations);
+t_stack			sort_three_reversed(t_stack stack, char ***operations);
+
+/*
+ * prototypes for sort_five.c file
+ */
+
 t_stack			sort_five(t_stack stack_a, char ***operations);
-void			push_three_b(t_stack *stack_a, t_stack *stack_b);
+void			push_three_b(t_stack *stack_a, t_stack *stack_b, char ***opers);
+void			add_opers_five(char ***opers, char **opers_a, char **opers_b);
+
+/*
+ * prototypes for sort_hundred.c file
+ */
 
 t_stack			sort_hundred(t_stack stack_a, char ***opers);
 
+/*
+ * prototypes for sort_more.c file
+ */
 
 t_stack			sort_more(t_stack stack_a, char ***opers);
 

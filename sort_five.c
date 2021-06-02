@@ -59,18 +59,20 @@ void	sort_five_helper(t_stack *a, t_stack *b, char ***opers)
 				*opers = ft_resize_opers(*opers, "sa");
 				*a = r_a_b(*a);
 			}
-			else if (b->items[b->top] > a->items[a->top] && b->items[b->top] > a->items[a->top - 1])
+			else
 			{
-				*opers = ft_resize_opers(*opers, "pb");
-				p_a_b(a, b);
-				*opers = ft_resize_opers(*opers, "sb");
-				*b = s_a_b(*b);
-				*opers = ft_resize_opers(*opers, "pa");
-				p_a_b(b, a);
-				*opers = ft_resize_opers(*opers, "sa");
-				*a = r_a_b(*a);
-				*opers = ft_resize_opers(*opers, "pa");
-				p_a_b(b, a);
+				while (b->items[b->top] > a->items[a->top])
+				{
+					*opers = ft_resize_opers(*opers, "pb");
+					p_a_b(a, b);
+					*opers = ft_resize_opers(*opers, "sb");
+					*b = s_a_b(*b);
+				}
+				while (b->items[b->top] < a->items[a->top])
+				{
+					*opers = ft_resize_opers(*opers, "pa");
+					p_a_b(b, a);
+				}
 			}
 		}
 	}

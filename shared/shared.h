@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/24 18:57:07 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/02 12:10:55 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ int				in_stack(long number, long *table, int size);
  */
 
 int				ft_size_opers(char **tab);
+void			add_opers(char ***opers, char **opers_a, char **opers_b);
 char			**ft_resize_opers(char **old, char *chaine);
 void			ft_free_opers(char **opers);
 void			print_operations(char **opers);

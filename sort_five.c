@@ -15,7 +15,7 @@ t_stack	sort_five(t_stack stack_a, char ***opers)
 		stack_a = sort_three(stack_a, &opers_a);
 		stack_b = sort_three_reversed(stack_b, &opers_b);
 		replace_a_b(&opers_b);
-		//add opers_a , opers_b to opers
+		add_opers(opers, opers_a, opers_b);
 		sort_five_helper(&stack_a, &stack_b, opers);
 	}
 	return (stack_a);

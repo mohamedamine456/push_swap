@@ -6,13 +6,13 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 11:02:15 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/24 19:07:17 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/02 12:10:10 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
 
-int		ft_size_opers(char **tab)
+int	ft_size_opers(char **tab)
 {
 	int		i;
 
@@ -25,7 +25,25 @@ int		ft_size_opers(char **tab)
 	return (i);
 }
 
-char		**ft_resize_opers(char **old, char *chaine)
+void	add_opers(char ***opers, char **opers_a, char **opers_b)
+{
+	int i;
+
+	i = 0;
+	while (opers_a != NULL && opers_a[i] != NULL)
+	{
+		*opers = ft_resize_opers(*opers, opers_a[i]);
+		i++;
+	}
+	i = 0;
+	while (opers_b != NULL && opers_b[i] != NULL)
+	{
+		*opers = ft_resize_opers(*opers, opers_b[i]);
+		i++;
+	}
+}
+
+char	**ft_resize_opers(char **old, char *chaine)
 {
 	char **new;
 	int i;
@@ -48,7 +66,7 @@ char		**ft_resize_opers(char **old, char *chaine)
 	return (new);
 }
 
-void        ft_free_opers(char **opers)
+void	ft_free_opers(char **opers)
 {
     int     i;
 

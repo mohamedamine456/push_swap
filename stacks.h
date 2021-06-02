@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:46:18 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/27 12:33:13 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/02 11:57:31 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ t_stack			sort_three_reversed(t_stack stack, char ***operations);
  */
 
 t_stack			sort_five(t_stack stack_a, char ***operations);
+void			sort_five_helper(t_stack *a, t_stack *b, char ***opers);
 void			push_three_b(t_stack *stack_a, t_stack *stack_b, char ***opers);
-void			add_opers_five(char ***opers, char **opers_a, char **opers_b);
 
 /*
  * prototypes for sort_hundred.c file

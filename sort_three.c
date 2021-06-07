@@ -1,87 +1,87 @@
 #include "stacks.h"
 
-t_stack	sort_three(t_stack stack, char ***operations)
+t_stack	sort_three(t_stack a, char ***operations)
 {
-	if (!check_sort_as(stack))
+	if (!check_sort_as(a))
 	{
-		if (stack.size == 2)
+		if (a.size == 2)
 		{
 			*operations = ft_resize_opers(*operations, ft_strdup("sa"));
-			stack = s_a_b(stack);
+			a = s_a_b(a);
 		}
 		else
 		{
-			if (stack.items[2] > stack.items[1] && stack.items[2] > stack.items[0])
+			if (a.items[a.top] > a.items[a.top - 1] && a.items[a.top] > a.items[a.top - 2])
 			{
 				*operations = ft_resize_opers(*operations, "ra");
-				stack = r_a_b(stack);
-				if (stack.items[2] > stack.items[1])
+				a = r_a_b(a);
+				if (a.items[a.top] > a.items[a.top - 1])
 				{
 					*operations = ft_resize_opers(*operations, "sa");
-					stack = s_a_b(stack);
+					a = s_a_b(a);
 				}
 			}
-			else if (stack.items[2] > stack.items[1] && stack.items[2] < stack.items[0])
+			else if (a.items[a.top] > a.items[a.top - 1] && a.items[a.top] < a.items[a.top - 2])
 			{
 				*operations = ft_resize_opers(*operations, "sa");
-				stack = s_a_b(stack);
+				a = s_a_b(a);
 			}
-			else if (stack.items[2] < stack.items[1] && stack.items[2] > stack.items[0])
+			else if (a.items[a.top] < a.items[a.top - 1] && a.items[a.top] > a.items[a.top - 2])
 			{
 				*operations = ft_resize_opers(*operations, "rra");
-				stack = r_r_a_b(stack);
+				a = r_r_a_b(a);
 			}
 			else
 			{
 				*operations = ft_resize_opers(*operations, "sa");
 				*operations = ft_resize_opers(*operations, "ra");
-				stack = s_a_b(stack);
-				stack = r_a_b(stack);
+				a = s_a_b(a);
+				a = r_a_b(a);
 			}
 		}
 	}
-	return (stack);
+	return (a);
 }
 
-t_stack	sort_three_reversed(t_stack stack, char ***operations)
+t_stack	sort_three_reversed(t_stack a, char ***operations)
 {
-	if (!check_sort_ds(stack))
+	if (!check_sort_ds(a))
 	{
-		if (stack.size == 2)
+		if (a.size == 2)
 		{
 			*operations = ft_resize_opers(*operations, ft_strdup("sa"));
-			stack = s_a_b(stack);
+			a = s_a_b(a);
 		}
 		else
 		{
-			if (stack.items[2] < stack.items[1] && stack.items[2] < stack.items[0])
+			if (a.items[a.top] < a.items[a.top - 1] && a.items[a.top] < a.items[a.top - 2])
 			{
 				*operations = ft_resize_opers(*operations, "ra");
-				stack = r_a_b(stack);
-				if (stack.items[2] < stack.items[1])
+				a = r_a_b(a);
+				if (a.items[a.top] < a.items[a.top - 1])
 				{
 					*operations = ft_resize_opers(*operations, "sa");
-					stack = s_a_b(stack);
+					a = s_a_b(a);
 				}
 			}
-			else if (stack.items[2] < stack.items[1] && stack.items[2] > stack.items[0])
+			else if (a.items[a.top] < a.items[a.top - 1] && a.items[a.top] > a.items[a.top - 2])
 			{
 				*operations = ft_resize_opers(*operations, "sa");
-				stack = s_a_b(stack);
+				a = s_a_b(a);
 			}
-			else if (stack.items[2] > stack.items[1] && stack.items[2] < stack.items[0])
+			else if (a.items[a.top] > a.items[a.top - 1] && a.items[a.top] < a.items[a.top - 2])
 			{
 				*operations = ft_resize_opers(*operations, "rra");
-				stack = r_r_a_b(stack);
+				a = r_r_a_b(a);
 			}
 			else
 			{
 				*operations = ft_resize_opers(*operations, "sa");
 				*operations = ft_resize_opers(*operations, "ra");
-				stack = s_a_b(stack);
-				stack = r_a_b(stack);
+				a = s_a_b(a);
+				a = r_a_b(a);
 			}
 		}
 	}
-	return (stack);
+	return (a);
 }

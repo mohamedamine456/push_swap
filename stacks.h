@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:46:18 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/07 16:41:25 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/07 20:41:18 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void			push_three_b(t_stack *stack_a, t_stack *stack_b, char ***opers);
  */
 
 t_stack			sort_hundred(t_stack stack_a, char ***opers);
-void			sort_a_b(t_stack *a, t_stack *b, char ***opers_a, char ***opers_b, char ***opers);
+void			sort_a_b(t_stack *a, t_stack *b, char ***opers);
+void			bring_low_five(t_stack *a, t_stack *b, char ***opers, long min);
 
 /*
  * prototypes for sort_more.c file

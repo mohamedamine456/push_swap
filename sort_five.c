@@ -1,79 +1,83 @@
 #include "stacks.h"
 
-t_stack	sort_five(t_stack stack_a, char ***opers)
+t_stack	sort_five(t_stack a, char ***opers)
 {
-	t_stack stack_b;
+	long	tmp;
 	char	**opers_a;
 	char	**opers_b;
+	t_stack b;
 
 	opers_a = NULL;
 	opers_b = NULL;
-	if (!check_sort_as(stack_a))
+	if (!check_sort_as(a))
 	{
-		stack_b = create_stack(stack_a.size);
-		push_three_b(&stack_a, &stack_b, opers);
-		stack_a = sort_three(stack_a, &opers_a);
-		stack_b = sort_three_reversed(stack_b, &opers_b);
+		b = create_stack(a.size / 2);
+		push_three_b(&a, &b, opers);
+		a = sort_three(a, &opers_a);
+		b = sort_three(b, &opers_b);
 		replace_a_b(&opers_b);
 		add_opers(opers, opers_a, opers_b);
-		sort_five_helper(&stack_a, &stack_b, opers);
+		while (b.top >= 0)
+		{
+			tmp = peek(b);
+			pop(&(b.top));
+			a = push(tmp, a);
+			*opers = ft_resize_opers(*opers, "pa");
+		}
 	}
-	return (stack_a);
+	return (a);
 }
 
-void	push_three_b(t_stack *stack_a, t_stack *stack_b, char ***opers)
+void   push_three_b(t_stack *a, t_stack *b, char ***opers)
 {
 	long tmp;
+	int	index;
 
-	while (stack_a->top > 2)
+	while (a->top > 2)
 	{
-		tmp = peek(*stack_a);
-		pop(&(stack_a->top));
-		*stack_b = push(tmp, *stack_b);
+		index = minimum_index(a->items, a->top);
+		bring_to_top(a, index, opers);
+		tmp = peek(*a);
+		pop(&(a->top));
+		*b = push(tmp, *b);
 		*opers = ft_resize_opers(*opers, "pb");
 	}
 }
 
-void	sort_five_helper(t_stack *a, t_stack *b, char ***opers)
+void	bring_to_top(t_stack *a, int index, char ***opers)
 {
-	while (b->top > -1)
+	if (index >= a->top / 2)
 	{
-		if (a->items[a->top] > b->items[b->top])
+		while (index < a->top)
 		{
-			*opers = ft_resize_opers(*opers, "pa");
-			p_a_b(b, a);
-		}
-		else if (a->first < b->items[b->top])
-		{
-			*opers = ft_resize_opers(*opers, "pa");
-			*opers = ft_resize_opers(*opers, "ra");
-			p_a_b(b, a);
 			*a = r_a_b(*a);
-		}
-		else
-		{
-			if (b->items[b->top] > a->items[a->top] && b->items[b->top] < a->items[a->top - 1])
-			{
-				*opers = ft_resize_opers(*opers, "pa");
-				p_a_b(b, a);
-				*opers = ft_resize_opers(*opers, "sa");
-				*a = r_a_b(*a);
-			}
-			else
-			{
-				while (b->items[b->top] > a->items[a->top])
-				{
-					*opers = ft_resize_opers(*opers, "pb");
-					p_a_b(a, b);
-					*opers = ft_resize_opers(*opers, "sb");
-					*b = s_a_b(*b);
-				}
-				while (b->items[b->top] < a->items[a->top])
-				{
-					*opers = ft_resize_opers(*opers, "pa");
-					p_a_b(b, a);
-				}
-			}
+			*opers = ft_resize_opers(*opers, "ra");
+			index++;
 		}
 	}
+	else
+	{
+		while (index >= 0)
+		{
+			*a = r_r_a_b(*a);
+			*opers = ft_resize_opers(*opers, "rra");
+			index--;
+		}
+	}
+}
+
+int	minimum_index(long *tab, int top)
+{
+	int i;
+	int tmp;
+
+	i = 0;
+	tmp = i;
+	while (i <= top)
+	{
+		if (tab[i] < tab[tmp])
+			tmp = i;
+		i++;
+	}
+	return (tmp);
 }

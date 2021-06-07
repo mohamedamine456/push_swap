@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:46:18 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/07 11:42:18 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:41:25 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,6 @@
 
 char			**read_operations(void);
 int				is_operation(char *str);
-
-/*
- * prototypes for opers_functions.c file
- */
-
-t_stack			sort_stack_ra(t_stack stack_a, char ***operations);
-t_stack			sort_stack_rra(t_stack stack_a, char ***operations);
-void			sort_helper(t_stack *stack_a, t_stack *stack_b,
-		long tmp, char ***operations);
-void			push_to_b(t_stack *stack_a, t_stack *stack_b,
-		char ***operations);
 
 /*
  * prototypes for check_ps_sort.c file
@@ -55,14 +44,13 @@ t_stack			sort_three_reversed(t_stack stack, char ***operations);
 
 t_stack			sort_five(t_stack stack_a, char ***operations);
 void			push_three_b(t_stack *stack_a, t_stack *stack_b, char ***opers);
-void			bring_to_top(t_stack *a, int index, char ***opers);
-int				minimum_index(long *tab, int top);
 
 /*
  * prototypes for sort_hundred.c file
  */
 
 t_stack			sort_hundred(t_stack stack_a, char ***opers);
+void			sort_a_b(t_stack *a, t_stack *b, char ***opers_a, char ***opers_b, char ***opers);
 
 /*
  * prototypes for sort_more.c file

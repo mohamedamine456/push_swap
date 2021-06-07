@@ -45,7 +45,7 @@ t_stack	sort_three(t_stack stack, char ***operations)
 
 t_stack	sort_three_reversed(t_stack stack, char ***operations)
 {
-	if (!check_sort_as(stack))
+	if (!check_sort_ds(stack))
 	{
 		if (stack.size == 2)
 		{

@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/02 12:10:55 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/07 19:27:07 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <limits.h>
 # define BUFFER_SIZE 1
 # define OPERS "sa sb ss pa pb ra rb rr rra rrb rrr"
 
@@ -140,5 +141,21 @@ int				check_sort_ds(t_stack stack);
 
 t_stack			copy_stack(t_stack a);
 void			replace_a_b(char ***opers);
+
+/*
+ * prototypes for push_to_b.c file
+ */
+
+void			push_to_b(t_stack *a, t_stack *b, char ***opers, int size);
+void			bring_to_top(t_stack *a, int index, char ***opers);
+int				minimum_index(long *tab, int top);
+int				maximum_index(long *tab, int top);
+
+/*
+ * prototypes for replace_stack.c file
+ */
+
+int				index_item(long *tab, int top, long min);
+long			*replace_stack(long *tab, int top);
 
 #endif

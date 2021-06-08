@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 16:39:51 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/08 19:45:29 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/08 21:14:56 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,27 @@
 t_stack	sort_hundred(t_stack a, char ***opers)
 {
 	t_stack b;
+	int		i;
+	int		min;
 
+	min = 0;
 	if (!check_sort_as(a))
 	{
 		b = create_stack(a.size);
 		a.items = replace_stack(a.items, a.top);
 		push_fifty(&a, &b, opers, 0);
 		sort_a_b(&a, &b, opers);
-		push_fifty(&a, &b, opers, 50);
+		while (peek(a) > 0)
+		{
+			p_a_b(&a, &b);
+			*opers = ft_resize_opers(*opers, "pb");
+		}
+		//sort_a_b(&a, &b, opers, 0);
 		printf("\n\n");
 		print_stack(a);
 		printf("\n\n");
 		print_stack(b);
+		printf("\n\n");
 	}
 	return (a);
 }
@@ -75,13 +84,7 @@ void	sort_a_b(t_stack *a, t_stack *b, char ***opers)
 		}
 		min += 5;
 	}
-	push_to_a(a, b, opers, &i);
-	while (i > 0)
-	{
-		*a = r_a_b(*a);
-		*opers = ft_resize_opers(*opers, "ra");
-		i--;
-	}
+	push_to_a(a, b, opers);
 }
 
 void	bring_low_five(t_stack *a, t_stack *b, char ***opers, long min)

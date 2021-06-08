@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:46:18 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/07 20:41:18 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/08 10:07:46 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void			push_three_b(t_stack *stack_a, t_stack *stack_b, char ***opers);
  */
 
 t_stack			sort_hundred(t_stack stack_a, char ***opers);
+void			push_fifty(t_stack *a, t_stack *b, char ***opers, int min);
 void			sort_a_b(t_stack *a, t_stack *b, char ***opers);
 void			bring_low_five(t_stack *a, t_stack *b, char ***opers, long min);
 
@@ -58,5 +59,8 @@ void			bring_low_five(t_stack *a, t_stack *b, char ***opers, long min);
  */
 
 t_stack			sort_more(t_stack stack_a, char ***opers);
+
+
+void			print_stack(t_stack a);
 
 #endif

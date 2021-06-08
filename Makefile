@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/24 14:34:08 by mlachheb          #+#    #+#              #
-#    Updated: 2021/06/07 21:42:25 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/06/08 10:07:27 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC = sort_three.c sort_five.c sort_hundred.c sort_more.c\
 			 shared/check_sort.c shared/apply_operations.c\
 			 shared/copy_stack.c shared/replace_a_b.c\
 			 shared/push_to_b.c shared/replace_stack.c\
-			 shared/sort_top_five.c
+			 shared/sort_top_five.c print_stack.c
 
 
 all: $(PUSH_SWAP_NAME)

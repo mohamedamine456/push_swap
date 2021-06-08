@@ -8,10 +8,41 @@ t_stack	sort_hundred(t_stack a, char ***opers)
 	{
 		b = create_stack(a.size);
 		a.items = replace_stack(a.items, a.top);
-		push_to_b(&a, &b, opers, 50);
-		sort_a_b(&a, &b, opers);
+		push_fifty(&a, &b, opers, 0);
+		printf("--------------------------------------\n");
+		print_stack(a);
+		printf("\n--------------------------------------\n");
+		print_stack(b);
+		//sort_a_b(&a, &b, opers);	
 	}
 	return (a);
+}
+
+void	push_fifty(t_stack *a, t_stack *b, char ***opers, int min)
+{
+	int		i;
+	int		j;
+	long	tmp;
+
+	i = 0;
+	while (i < 50)
+	{
+		j = 0;
+		while (j <= a->top)
+		{
+			if (a->items[j] >= min && a->items[j] < min + 50)
+			{
+				bring_to_top(a, j, opers);
+				tmp = peek(*a);
+				pop(&(a->top));
+				*b = push(tmp, *b);
+				*opers = ft_resize_opers(*opers, "pb");
+				break ;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 void	sort_a_b(t_stack *a, t_stack *b, char ***opers)
@@ -54,7 +85,6 @@ void	bring_low_five(t_stack *a, t_stack *b, char ***opers, long min)
 				pop(&(b->top));
 				*a = push(tmp, *a);
 				*opers = ft_resize_opers(*opers, "pa");
-				replace_a_b(opers);
 				break ;
 			}
 			j++;

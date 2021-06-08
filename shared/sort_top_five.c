@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:33:13 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/07 21:44:54 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/08 13:51:31 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,36 @@
 
 void	sort_top_five(t_stack *a, t_stack *b, char ***opers)
 {
-	char	**opers_a;
-	char	**opers_b;
 	int		i;
 	long	tmp;
 
 	i = 0;
-	opers_a = NULL;
-	opers_b = NULL;
-	if (!check_top_five_sort(a->items, a->top))
+	if (!check_top_five_sort(*a))
 	{
-		push_to_b(a, b, opers, 3);
-		*a = sort_three(*a, &opers_a);
-		*b = sort_three_reversed(*b, &opers_b);
-		replace_a_b(&opers_b);
-		add_opers(opers, opers_a, opers_b);
-		while (i < 2 && b->top >= 0)
-		{
-			tmp = peek(*b);
-			pop(&(b->top));
-			*a = push(tmp, *a);
-			*opers = ft_resize_opers(*opers, "pa");
-		}
+		//sort top five with easy sort than push them back to a and ra
 	}
 }
 
-int		check_top_five_sort(long *tab, int top)
+int		check_top_five_sort(t_stack stack)
 {
-	int		i;
-	int		size;
-	long	tmp;
+	int		i;	
+	long    temp1;
+	long    temp2;
 
-	i = top;
-	if (top > 5)
-		size = top - 5;
-	else
-		size = 0;
-	tmp = tab[top];
-	while (i > size)
+	i = 0;
+	if (!is_empty(stack.top))
 	{
-		if (tmp < tab[i])
+		temp1 = peek(stack);
+		pop(&(stack.top));
+	}
+	while (!is_empty(stack.top) && i < 5)
+	{
+		temp2 = peek(stack);
+		pop(&(stack.top));
+		if (temp1 <= temp2)
 			return (0);
-		i--;
+		temp1 = temp2;
+		i++;
 	}
 	return (1);
 }

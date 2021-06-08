@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/07 20:59:30 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/08 12:03:41 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,6 +163,6 @@ long			*replace_stack(long *tab, int top);
  */
 
 void			sort_top_five(t_stack *a, t_stack *b, char ***opers);
-int				check_top_five_sort(long *tab, int top);
+int				check_top_five_sort(t_stack stack);
 
 #endif

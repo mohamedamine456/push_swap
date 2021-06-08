@@ -19,9 +19,7 @@ t_stack	sort_five(t_stack a, char ***opers)
 		add_opers(opers, opers_a, opers_b);
 		while (b.top >= 0)
 		{
-			tmp = peek(b);
-			pop(&(b.top));
-			a = push(tmp, a);
+			p_a_b(&b, &a);
 			*opers = ft_resize_opers(*opers, "pa");
 		}
 	}

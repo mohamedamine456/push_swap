@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_hundred.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/08 16:39:51 by mlachheb          #+#    #+#             */
+/*   Updated: 2021/06/08 18:46:18 by mlachheb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "stacks.h"
 
 t_stack	sort_hundred(t_stack a, char ***opers)
@@ -9,11 +21,11 @@ t_stack	sort_hundred(t_stack a, char ***opers)
 		b = create_stack(a.size);
 		a.items = replace_stack(a.items, a.top);
 		push_fifty(&a, &b, opers, 0);
-		printf("--------------------------------------\n");
-		print_stack(a);
-		printf("\n--------------------------------------\n");
-		print_stack(b);
-		//sort_a_b(&a, &b, opers);	
+		sort_a_b(&a, &b, opers);
+		//printf("\n\n");
+		//print_stack(a);
+		//printf("\n\n");
+		//print_stack(b);
 	}
 	return (a);
 }
@@ -33,9 +45,7 @@ void	push_fifty(t_stack *a, t_stack *b, char ***opers, int min)
 			if (a->items[j] >= min && a->items[j] < min + 50)
 			{
 				bring_to_top(a, j, opers);
-				tmp = peek(*a);
-				pop(&(a->top));
-				*b = push(tmp, *b);
+				p_a_b(a, b);
 				*opers = ft_resize_opers(*opers, "pb");
 				break ;
 			}
@@ -51,15 +61,15 @@ void	sort_a_b(t_stack *a, t_stack *b, char ***opers)
 	int	i;
 
 	min = 0;
-	while (b->top >= 5)
+	while (b->top - 5 >= 0)
 	{
 		i = 0;
 		bring_low_five(a, b, opers, min);
 		sort_top_five(a, b, opers);
-		while (i < 5 && a->items[a->top] > a->items[a->top - 1])
+		while (i < 5)
 		{
-			*opers = ft_resize_opers(*opers, "ra");
 			*a = r_a_b(*a);
+			*opers = ft_resize_opers(*opers, "ra");
 			i++;
 		}
 		min += 5;

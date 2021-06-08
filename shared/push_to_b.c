@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:44 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/08 13:50:48 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:45:31 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,22 @@ void   push_to_b(t_stack *a, t_stack *b, char ***opers, int size)
 		p_a_b(a, b);
 		*opers = ft_resize_opers(*opers, "pb");
 		i++;
+	}
+}
+
+void   push_to_a(t_stack *a, t_stack *b, char ***opers, int *nb)
+{
+	long tmp;
+	int	index;
+	
+	*nb = 0;
+	while (b->top >= 0)
+	{
+		index = maximum_index(b->items, b->top);
+		bring_to_top(b, index, opers);
+		p_a_b(b, a);
+		*opers = ft_resize_opers(*opers, "pa");
+		*nb += 1;
 	}
 }
 

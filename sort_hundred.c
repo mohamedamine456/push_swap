@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 16:39:51 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/08 18:46:18 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:45:29 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ t_stack	sort_hundred(t_stack a, char ***opers)
 		a.items = replace_stack(a.items, a.top);
 		push_fifty(&a, &b, opers, 0);
 		sort_a_b(&a, &b, opers);
-		//printf("\n\n");
-		//print_stack(a);
-		//printf("\n\n");
-		//print_stack(b);
+		push_fifty(&a, &b, opers, 50);
+		printf("\n\n");
+		print_stack(a);
+		printf("\n\n");
+		print_stack(b);
 	}
 	return (a);
 }
@@ -73,6 +74,13 @@ void	sort_a_b(t_stack *a, t_stack *b, char ***opers)
 			i++;
 		}
 		min += 5;
+	}
+	push_to_a(a, b, opers, &i);
+	while (i > 0)
+	{
+		*a = r_a_b(*a);
+		*opers = ft_resize_opers(*opers, "ra");
+		i--;
 	}
 }
 

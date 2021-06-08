@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/08 18:30:07 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:42:34 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ void			replace_a_b(char ***opers);
  */
 
 void			push_to_b(t_stack *a, t_stack *b, char ***opers, int size);
+void			push_to_a(t_stack *a, t_stack *b, char ***opers, int *nb);
 void			bring_to_top(t_stack *a, int index, char ***opers);
 int				minimum_index(long *tab, int top);
 int				maximum_index(long *tab, int top);

@@ -3,32 +3,40 @@
 
 void	easy_five_sort(t_stack *a, t_stack *b, char ***opers)
 {
-	long	tmp;
-	long	tmp2;
+	int		pb;
+	int		pa;
 
-	while (!is_empty(a->top))
+	pb = 0;
+	pa = 5;
+	while (pa > 0 && !is_empty(a->top))
 	{
-		tmp = peek(*a);
-		pop(&(a->top));
-		if (is_empty(b->top) || tmp > peek(*b))
-			*b = push(tmp, *b);
+		if (pb == 0 || peek(*a) > peek(*b))
+		{
+			p_a_b(a, b);
+			pa--;
+			pb++;
+		}
 		else
 		{
-			while (!is_empty(b->top) && tmp < peek(*b))
+			while (pb > 0 && pa < 5 && peek(*a) < peek(*b))
 			{
-				tmp2 = peek(*b);
-				pop(&(b->top));
-				*a = push(tmp2, *a);
+				p_a_b(b, a);
+				*a = s_a_b(*a);
+				pb--;
+				pa++;
 			}
-			*b = push(tmp, *b);
+			p_a_b(a, b);
+			pb++;
+			pa--;
 		}
 	}
-	while (!is_empty(b->top))
+	while (pb > 0)
 	{
-		tmp = peek(*b);
-		pop(&(b->top));
-		*a = push(tmp, *a);
-	}	
+		p_a_b(b, a);
+		pb--;
+		pa++;
+	}
+	printf("pb: %d, i: %d\n", pb, pa);
 }
 
 int main(int argc, char **argv)

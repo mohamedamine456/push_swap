@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:44 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/08 21:11:08 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/09 11:41:50 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void   push_to_b(t_stack *a, t_stack *b, char ***opers, int size)
 {
-	long tmp;
 	int	index;
 	int i;
 
-	while (i < size - 1 && a->top > size - 1)
+	i = 0;
+	while (i < size && a->top > size - 1)
 	{
 		index = minimum_index(a->items, a->top);
 		bring_to_top(a, index, opers);
@@ -30,7 +30,6 @@ void   push_to_b(t_stack *a, t_stack *b, char ***opers, int size)
 
 void   push_to_a(t_stack *a, t_stack *b, char ***opers)
 {
-	long tmp;
 	int	index;
 	
 	while (b->top >= 0)

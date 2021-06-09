@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/24 10:39:01 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/04/26 16:58:20 by mlachheb         ###   ########.fr       */
+/*   Created: 2021/06/09 11:45:41 by mlachheb          #+#    #+#             */
+/*   Updated: 2021/06/09 12:03:50 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int		main(int argc, char **argv)
 			stack_a = fill_stack(argc, argv);
 			operations = read_operations();
 			stack_a = apply_operations(stack_a, operations);
-			retv = check_sort(stack_a);
+			retv = check_sort_as(stack_a);
+			print_stack(stack_a);
 			ft_free_opers(operations);
 			free(stack_a.items);
 			ok_ko(retv);

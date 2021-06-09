@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/08 21:11:27 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/09 11:02:40 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,15 +158,5 @@ int				maximum_index(long *tab, int top);
 
 int				index_item(long *tab, int top, long min);
 long			*replace_stack(long *tab, int top);
-
-/*
- * prototypes for sort_top_five.c file
- */
-
-void			sort_top_five(t_stack *a, t_stack *b, char ***opers);
-void			sort_high_five(t_stack *a, t_stack *b, char ***opers);
-void			sort_top_three(t_stack *a, t_stack *b, char ***opers);
-int				check_top_sort(t_stack stack, int size);
-
 
 #endif

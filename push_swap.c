@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 07:53:12 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/08 20:54:52 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/09 12:11:37 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ int main(int argc, char **argv)
 				stack_a = sort_hundred(stack_a, &opers);
 			else
 				stack_a = sort_more(stack_a, &opers);
-			//print_operations(opers);
+			print_operations(opers);
 			ft_free_opers(opers);
+			//print_stack(stack_a);
 			free(stack_a.items);
 		}
 	}

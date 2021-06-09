@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "shared.h"
+#include "../stacks.h"
 
 void   push_to_b(t_stack *a, t_stack *b, char ***opers, int size)
 {
@@ -21,7 +22,7 @@ void   push_to_b(t_stack *a, t_stack *b, char ***opers, int size)
 	while (i < size && a->top > size - 1)
 	{
 		index = minimum_index(a->items, a->top);
-		bring_to_top(a, index, opers);
+		bring_to_top_a(a, index, opers);
 		p_a_b(a, b);
 		*opers = ft_resize_opers(*opers, "pb");
 		i++;
@@ -35,19 +36,25 @@ void   push_to_a(t_stack *a, t_stack *b, char ***opers)
 	while (b->top >= 0)
 	{
 		index = minimum_index(b->items, b->top);
-		bring_to_top(b, index, opers);
+		bring_to_top_b(b, index, opers);
 		p_a_b(b, a);
 		*opers = ft_resize_opers(*opers, "pa");
-		*a = r_a_b(*a);
-		*opers = ft_resize_opers(*opers, "ra");
+		if (a->top > 0)
+		{
+			*a = r_a_b(*a);
+			*opers = ft_resize_opers(*opers, "ra");
+		}
 	}
 }
 
-void	bring_to_top(t_stack *a, int index, char ***opers)
+void	bring_to_top_a(t_stack *a, int index, char ***opers)
 {
+	long	tmp;
+
+	tmp = a->items[index];
 	if (index >= a->top / 2)
 	{
-		while (index < a->top)
+		while (tmp != peek(*a))
 		{
 			*a = r_a_b(*a);
 			*opers = ft_resize_opers(*opers, "ra");
@@ -56,10 +63,35 @@ void	bring_to_top(t_stack *a, int index, char ***opers)
 	}
 	else
 	{
-		while (index >= 0)
+		while (tmp != peek(*a))
 		{
 			*a = r_r_a_b(*a);
 			*opers = ft_resize_opers(*opers, "rra");
+			index--;
+		}
+	}
+}
+
+void	bring_to_top_b(t_stack *a, int index, char ***opers)
+{
+	long	tmp;
+
+	tmp = a->items[index];
+	if (index >= a->top / 2)
+	{
+		while (tmp != peek(*a))
+		{
+			*a = r_a_b(*a);
+			*opers = ft_resize_opers(*opers, "rb");
+			index++;
+		}
+	}
+	else
+	{
+		while (tmp != peek(*a))
+		{
+			*a = r_r_a_b(*a);
+			*opers = ft_resize_opers(*opers, "rrb");
 			index--;
 		}
 	}

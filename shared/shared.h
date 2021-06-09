@@ -148,7 +148,8 @@ void			replace_a_b(char ***opers);
 
 void			push_to_b(t_stack *a, t_stack *b, char ***opers, int size);
 void			push_to_a(t_stack *a, t_stack *b, char ***opers);
-void			bring_to_top(t_stack *a, int index, char ***opers);
+void			bring_to_top_a(t_stack *a, int index, char ***opers);
+void			bring_to_top_b(t_stack *a, int index, char ***opers);
 int				minimum_index(long *tab, int top);
 int				maximum_index(long *tab, int top);
 

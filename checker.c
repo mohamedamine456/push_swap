@@ -31,7 +31,6 @@ int		main(int argc, char **argv)
 			operations = read_operations();
 			stack_a = apply_operations(stack_a, operations);
 			retv = check_sort_as(stack_a);
-			print_stack(stack_a);
 			ft_free_opers(operations);
 			free(stack_a.items);
 			ok_ko(retv);

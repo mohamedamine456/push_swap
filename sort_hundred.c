@@ -44,7 +44,7 @@ void	push_five_chunks(t_stack *a, t_stack *b, char ***opers)
 		{
 			if (a->items[j] >= min && a->items[j] < min + 20)
 			{
-				bring_to_top(a, j, opers);
+				bring_to_top_a(a, j, opers);
 				p_a_b(a, b);
 				*opers = ft_resize_opers(*opers, "pb");
 				break ;

@@ -11,7 +11,6 @@ t_stack	sort_more(t_stack a, char ***opers)
 		push_ten_chunks(&a, &b, opers);
 		push_to_a(&a, &b, opers);
 	}
-	(void)opers;
 	return (a);
 }
 
@@ -28,7 +27,7 @@ void	push_ten_chunks(t_stack *a, t_stack *b, char ***opers)
 		j = 0;
 		while (j <= a->top)
 		{
-			if (a->items[j] >= min && a->items[j] < min + 50)
+			if (a->items[j] >= min && a->items[j] < min + 40)
 			{
 				bring_to_top_a(a, j, opers);
 				p_a_b(a, b);
@@ -37,8 +36,8 @@ void	push_ten_chunks(t_stack *a, t_stack *b, char ***opers)
 			}
 			j++;
 		}
-		if ((b->top + 1) % 50 == 0)
-			min += 50;
+		if ((b->top + 1) % 40 == 0)
+			min += 40;
 		i++;
 	}
 }

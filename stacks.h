@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 10:46:18 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/09 11:03:39 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/09 17:23:41 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void			push_five_chunks(t_stack *a, t_stack *b, char ***opers);
 
 t_stack			sort_more(t_stack stack_a, char ***opers);
 void			push_ten_chunks(t_stack *a, t_stack *b, char ***opers);
+void			push_rest_chunks(t_stack *a, t_stack *b, char ***opers);
 
 
 void			print_stack(t_stack a);

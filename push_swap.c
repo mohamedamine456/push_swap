@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 				stack_a = sort_more(stack_a, &opers);
 			print_operations(opers);
 			ft_free_opers(opers);
-			//print_stack(stack_a);
 			free(stack_a.items);
 		}
 	}

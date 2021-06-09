@@ -82,15 +82,3 @@ t_stack	push(long new, t_stack stack)
 	}
 	return (stack);
 }
-
-void	print_all(t_stack stack)
-{
-	int number;
-
-	while (stack.top > -1)
-	{
-		number = peek(stack);
-		pop(&stack.top);
-		printf("%9d", number);
-	}
-}

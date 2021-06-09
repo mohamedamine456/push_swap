@@ -57,6 +57,7 @@ void			push_five_chunks(t_stack *a, t_stack *b, char ***opers);
  */
 
 t_stack			sort_more(t_stack stack_a, char ***opers);
+void			push_ten_chunks(t_stack *a, t_stack *b, char ***opers);
 
 
 void			print_stack(t_stack a);

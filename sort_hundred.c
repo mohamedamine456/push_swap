@@ -15,9 +15,7 @@
 t_stack	sort_hundred(t_stack a, char ***opers)
 {
 	t_stack b;
-	int		min;
 
-	min = 0;
 	if (!check_sort_as(a))
 	{
 		b = create_stack(a.size);

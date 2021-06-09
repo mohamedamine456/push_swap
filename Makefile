@@ -25,8 +25,8 @@ SRC = sort_three.c sort_five.c sort_hundred.c sort_more.c\
 			 shared/helper_functions.c shared/operations.c\
 			 shared/opers_functions.c shared/sort_operations.c\
 			 shared/check_sort.c shared/apply_operations.c\
-			 shared/copy_stack.c shared/replace_a_b.c\
-			 shared/push_to_b.c shared/replace_stack.c\
+			 shared/replace_a_b.c shared/push_to_stack.c\
+			 shared/min_max_stack.c shared/replace_stack.c\
 			 print_stack.c read_operations.c
 
 all: $(PUSH_SWAP_NAME)

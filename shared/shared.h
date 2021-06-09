@@ -143,13 +143,18 @@ t_stack			copy_stack(t_stack a);
 void			replace_a_b(char ***opers);
 
 /*
- * prototypes for push_to_b.c file
+ * prototypes for push_to_stack.c file
  */
 
 void			push_to_b(t_stack *a, t_stack *b, char ***opers, int size);
 void			push_to_a(t_stack *a, t_stack *b, char ***opers);
 void			bring_to_top_a(t_stack *a, int index, char ***opers);
 void			bring_to_top_b(t_stack *a, int index, char ***opers);
+
+/*
+ * prototypes for min_max_stack.c file
+ */
+
 int				minimum_index(long *tab, int top);
 int				maximum_index(long *tab, int top);
 

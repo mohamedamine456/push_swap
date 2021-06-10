@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:44 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/10 11:45:50 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:48:26 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,10 @@ void   push_to_a(t_stack *a, t_stack *b, char ***opers)
 	
 	while (b->top >= 0)
 	{
-		index = minimum_index(b->items, b->top);
+		index = maximum_index(b->items, b->top);
 		bring_to_top_b(b, index, opers);
 		p_a_b(b, a);
-		*opers = ft_resize_opers(*opers, "pa");
-		if (a->top > 0)
-		{
-			*a = r_a_b(*a);
-			*opers = ft_resize_opers(*opers, "ra");
-		}
+		*opers = ft_resize_opers(*opers, "pa");	
 	}
 }
 

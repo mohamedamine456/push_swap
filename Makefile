@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/24 14:34:08 by mlachheb          #+#    #+#              #
-#    Updated: 2021/06/09 12:13:41 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/06/10 13:45:37 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,12 +38,14 @@ bonus:
 	gcc -Wall -Wextra -Werror -g $(SRC) $(CHECKER_MAIN) -o $(CHECKER_NAME)
 
 clean:
-	rm -rf $(PUSH_SWAP_NAME) 
+	echo "No object File to remove" 
 
 fclean:
-	rm -rf $(PUSH_SWAP_NAME) 
+	echo "No Library to remove"
 
-re: fclean all
+re: 
+	rm -rf $(PUSH_SWAP_NAME)
+	gcc -Wall -Wextra -Werror $(SRC) $(PUSH_SWAP_MAIN) -o $(PUSH_SWAP_NAME)
 
 debug:
 	gcc -Wall -Wextra -Werror -g $(SRC) $(PUSH_SWAP_MAIN) -o $(PUSH_SWAP_NAME)

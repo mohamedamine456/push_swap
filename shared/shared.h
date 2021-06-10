@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/09 11:02:40 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/10 12:28:04 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,7 @@ void			bring_to_top_b(t_stack *a, int index, char ***opers);
 
 int				minimum_index(long *tab, int top);
 int				maximum_index(long *tab, int top);
-
+int				minimum_stack(long *tab, int top, int min, int max);
 /*
  * prototypes for replace_stack.c file
  */

@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 15:53:57 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/04/27 09:26:13 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:38:49 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,15 @@ char	**ft_split(char const *s, char c)
 	i = -1;
 	k = 0;
 	words = NULL;
-	if (s == NULL || !(words = (char **)malloc((count_s((char *)s,
-							c) + 1) * sizeof(char *))))
+	words = (char **)malloc((count_s((char *)s, c) + 1) * sizeof(char *));
+	if (s == NULL || words == NULL)
 		return (NULL);
 	while (++i < count_s((char *)s, c))
 	{
 		j = -1;
 		while (((char *)s)[k] == c)
 			k++;
-		if (!(words[i] = malloc(sizeof(char) * car_s((char *)s + k, c) + 1)))
-			free_all(words, i);
+		words[i] = malloc(sizeof(char) * car_s((char *)s + k, c) + 1);
 		while (++j < car_s((char *)s + k, c))
 			words[i][j] = ((char *)s)[j + k];
 		words[i][j] = '\0';
@@ -41,10 +40,10 @@ char	**ft_split(char const *s, char c)
 	return (words);
 }
 
-int		count_s(char *s, char c)
+int	count_s(char *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -57,9 +56,9 @@ int		count_s(char *s, char c)
 	return (count);
 }
 
-int		car_s(char *s, char c)
+int	car_s(char *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != c && s[i] != '\0')

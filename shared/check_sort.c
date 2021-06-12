@@ -6,13 +6,13 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 13:17:05 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/04/28 12:57:08 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:30:27 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
 
-int		check_sort(t_stack stack)
+int	check_sort(t_stack stack)
 {
 	long	temp1;
 	long	temp2;
@@ -35,7 +35,7 @@ int		check_sort(t_stack stack)
 	return (1);
 }
 
-int		sorted_a_b(t_stack a, t_stack b)
+int	sorted_a_b(t_stack a, t_stack b)
 {
 	long	tmp_a;
 	long	tmp_b;
@@ -54,10 +54,9 @@ int		sorted_a_b(t_stack a, t_stack b)
 			return (1);
 	}
 	return (0);
-	
 }
 
-int		check_sort_as(t_stack stack)
+int	check_sort_as(t_stack stack)
 {
 	long	temp1;
 	long	temp2;
@@ -78,7 +77,7 @@ int		check_sort_as(t_stack stack)
 	return (1);
 }
 
-int		check_sort_ds(t_stack stack)
+int	check_sort_ds(t_stack stack)
 {
 	long	temp1;
 	long	temp2;

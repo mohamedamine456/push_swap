@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 18:52:51 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/24 19:01:00 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:46:30 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	replace_a_b(char ***opers)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*opers != NULL && (*opers)[i] != NULL)

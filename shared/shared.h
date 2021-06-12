@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:24:53 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/09 11:02:40 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:53:24 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ char			**ft_resize_tab(char **old, char *chaine);
 t_stack			fill_stack(int argc, char **argv);
 int				in_stack(long number, long *table, int size);
 
-
 /*
  * prototypes for opers_functions.c file
  */
@@ -124,6 +123,7 @@ void			print_operations(char **opers);
  */
 
 t_stack			apply_operations(t_stack stack_a, char **opers);
+void			call_opers(t_stack *a, t_stack *b, char *opers);
 void			check_print_operations(char	**operations1, char	**operations2);
 
 /*

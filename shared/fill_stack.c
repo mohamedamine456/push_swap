@@ -6,16 +6,26 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:28:40 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/05/18 13:19:48 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/12 13:06:12 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
 
+t_stack	create_stack(int size)
+{
+	t_stack	stack;
+
+	stack.top = -1;
+	stack.size = size;
+	stack.items = (long *)malloc(size * sizeof(long));
+	return (stack);
+}
+
 t_stack	fill_stack(int argc, char **argv)
 {
 	t_stack	stack;
-	int			i;
+	int		i;
 	long	number;
 
 	stack = create_stack(argc - 1);
@@ -36,9 +46,9 @@ t_stack	fill_stack(int argc, char **argv)
 	return (stack);
 }
 
-int		in_stack(long number, long *table, int size)
+int	in_stack(long number, long *table, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= size)

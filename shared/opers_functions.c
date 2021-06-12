@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 11:02:15 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/02 12:10:10 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:44:39 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_size_opers(char **tab)
 
 void	add_opers(char ***opers, char **opers_a, char **opers_b)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (opers_a != NULL && opers_a[i] != NULL)
@@ -45,9 +45,9 @@ void	add_opers(char ***opers, char **opers_a, char **opers_b)
 
 char	**ft_resize_opers(char **old, char *chaine)
 {
-	char **new;
-	int i;
-	int len;
+	char	**new;
+	int		i;
+	int		len;
 
 	i = 0;
 	if (old == NULL)
@@ -68,19 +68,19 @@ char	**ft_resize_opers(char **old, char *chaine)
 
 void	ft_free_opers(char **opers)
 {
-    int     i;
+	int	i;
 
-    i = 0;
-    if (opers != NULL)
-    {
-        while (opers[i] != NULL)
-        {
-            free(opers[i]);
-            i++;
-        }
-        free(opers);
-        opers = NULL;
-    }
+	i = 0;
+	if (opers != NULL)
+	{
+		while (opers[i] != NULL)
+		{
+			free(opers[i]);
+			i++;
+		}
+		free(opers);
+		opers = NULL;
+	}
 }
 
 void	print_operations(char **opers)

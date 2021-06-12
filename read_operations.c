@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_operations.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/11 12:34:08 by mlachheb          #+#    #+#             */
+/*   Updated: 2021/06/11 14:01:33 by mlachheb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "stacks.h"
 
-char	**read_operations()
+char	**read_operations(void)
 {
 	char	**opers;
 	char	*buff;
@@ -28,7 +40,7 @@ char	**read_operations()
 	return (opers);
 }
 
-int		is_operation(char *str)
+int	is_operation(char *str)
 {
 	int		i;
 	char	**opers;

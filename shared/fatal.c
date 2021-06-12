@@ -6,13 +6,13 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 10:38:52 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/04/27 09:25:52 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:30:48 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
 
-void	fatal()
+void	fatal(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);

@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 11:17:39 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/04/24 14:52:17 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:29:25 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,39 +21,42 @@ t_stack	apply_operations(t_stack stack_a, char **opers)
 	i = 0;
 	while (opers != NULL && opers[i] != NULL)
 	{
-
-		if (!ft_strcmp(opers[i], "sa"))
-			stack_a = s_a_b(stack_a);
-		else if (!ft_strcmp(opers[i], "sb"))
-			stack_b = s_a_b(stack_b);
-		else if (!ft_strcmp(opers[i], "ss"))
-			s_s(&stack_a, &stack_b);
-		else if (!ft_strcmp(opers[i], "pa"))
-			p_a_b(&stack_b, &stack_a);
-		else if (!ft_strcmp(opers[i], "pb"))
-			p_a_b(&stack_a, &stack_b);
-		else if (!ft_strcmp(opers[i], "ra"))
-			stack_a = r_a_b(stack_a);
-		else if (!ft_strcmp(opers[i], "rb"))
-			stack_b = r_a_b(stack_b);
-		else if (!ft_strcmp(opers[i], "rr"))
-			r_r(&stack_a, &stack_b);
-		else if (!ft_strcmp(opers[i], "rra"))
-			stack_a = r_r_a_b(stack_a);
-		else if (!ft_strcmp(opers[i], "rrb"))
-			stack_b = r_r_a_b(stack_b);
-		else
-			r_r_r(&stack_a, &stack_b);
+		call_opers(&stack_a, &stack_b, opers[i]);
 		i++;
 	}
 	free(stack_b.items);
 	return (stack_a);
 }
 
+void	call_opers(t_stack *a, t_stack *b, char *opers)
+{
+	if (!ft_strcmp(opers, "sa"))
+		*a = s_a_b(*a);
+	else if (!ft_strcmp(opers, "sb"))
+		*b = s_a_b(*b);
+	else if (!ft_strcmp(opers, "ss"))
+		s_s(a, b);
+	else if (!ft_strcmp(opers, "pa"))
+		p_a_b(b, a);
+	else if (!ft_strcmp(opers, "pb"))
+		p_a_b(a, b);
+	else if (!ft_strcmp(opers, "ra"))
+		*a = r_a_b(*a);
+	else if (!ft_strcmp(opers, "rb"))
+		*b = r_a_b(*b);
+	else if (!ft_strcmp(opers, "rr"))
+		r_r(a, b);
+	else if (!ft_strcmp(opers, "rra"))
+		*a = r_r_a_b(*a);
+	else if (!ft_strcmp(opers, "rrb"))
+		*b = r_r_a_b(*b);
+	else
+		r_r_r(a, b);
+}
 
 void	check_print_operations(char	**operations1, char	**operations2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (ft_size_opers(operations1) <= ft_size_opers(operations2))

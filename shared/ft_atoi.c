@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:25:58 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/04/27 09:26:31 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:31:53 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_atoi(const char *str)
 {
-	int			i;
-	int			neg;
+	int		i;
+	int		neg;
 	long	res;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 13:13:32 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/10 14:00:04 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/12 14:19:12 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 t_stack	sort_more(t_stack a, char ***opers)
 {
-	t_stack b;
+	t_stack	b;
 
-	if(!check_sort_as(a))
+	if (!check_sort_as(a))
 	{
 		b = create_stack(a.size);
 		a.items = replace_stack(a.items, a.top);
 		push_ten_chunks(&a, &b, opers);
 		push_to_a(&a, &b, opers);
-	}
+		free(b.items);
+	}	
 	return (a);
 }
 

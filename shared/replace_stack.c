@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:48:36 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/07 19:32:22 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:47:25 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long	*replace_stack(long *tab, int top)
 	i = 0;
 	new_tab = (long *)malloc(sizeof(long) * top + 1);
 	min = INT_MIN;
-	while(i <= top)
+	while (i <= top)
 	{
 		imin = index_item(tab, top, min);
 		min = tab[imin];

@@ -1,87 +1,117 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/11 14:00:50 by mlachheb          #+#    #+#             */
+/*   Updated: 2021/06/12 13:00:13 by mlachheb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "stacks.h"
 
-t_stack	sort_three(t_stack a, char ***operations)
+t_stack	sort_three(t_stack a, char ***opers)
 {
 	if (!check_sort_as(a))
 	{
 		if (a.size == 2)
 		{
-			*operations = ft_resize_opers(*operations, ft_strdup("sa"));
+			*opers = ft_resize_opers(*opers, "sa");
 			a = s_a_b(a);
 		}
 		else
 		{
-			if (a.items[a.top] > a.items[a.top - 1] && a.items[a.top] > a.items[a.top - 2])
+			if (a.items[a.top] > a.items[a.top - 1]
+				&& a.items[a.top] > a.items[a.top - 2])
 			{
-				*operations = ft_resize_opers(*operations, "ra");
+				*opers = ft_resize_opers(*opers, "ra");
 				a = r_a_b(a);
 				if (a.items[a.top] > a.items[a.top - 1])
 				{
-					*operations = ft_resize_opers(*operations, "sa");
+					*opers = ft_resize_opers(*opers, "sa");
 					a = s_a_b(a);
 				}
 			}
-			else if (a.items[a.top] > a.items[a.top - 1] && a.items[a.top] < a.items[a.top - 2])
-			{
-				*operations = ft_resize_opers(*operations, "sa");
-				a = s_a_b(a);
-			}
-			else if (a.items[a.top] < a.items[a.top - 1] && a.items[a.top] > a.items[a.top - 2])
-			{
-				*operations = ft_resize_opers(*operations, "rra");
-				a = r_r_a_b(a);
-			}
 			else
-			{
-				*operations = ft_resize_opers(*operations, "sa");
-				*operations = ft_resize_opers(*operations, "ra");
-				a = s_a_b(a);
-				a = r_a_b(a);
-			}
+				sort_three_helper(&a, opers);
 		}
 	}
 	return (a);
 }
 
-t_stack	sort_three_reversed(t_stack a, char ***operations)
+void	sort_three_helper(t_stack *a, char ***opers)
+{
+	if (a->items[a->top] > a->items[a->top - 1]
+		&& a->items[a->top] < a->items[a->top - 2])
+	{
+		*opers = ft_resize_opers(*opers, "sa");
+		*a = s_a_b(*a);
+	}
+	else if (a->items[a->top] < a->items[a->top - 1]
+		&& a->items[a->top] > a->items[a->top - 2])
+	{
+		*opers = ft_resize_opers(*opers, "rra");
+		*a = r_r_a_b(*a);
+	}
+	else
+	{
+		*opers = ft_resize_opers(*opers, "sa");
+		*opers = ft_resize_opers(*opers, "ra");
+		*a = s_a_b(*a);
+		*a = r_a_b(*a);
+	}
+}
+
+t_stack	sort_three_reversed(t_stack a, char ***opers)
 {
 	if (!check_sort_ds(a))
 	{
 		if (a.size == 2)
 		{
-			*operations = ft_resize_opers(*operations, ft_strdup("sa"));
+			*opers = ft_resize_opers(*opers, "sa");
 			a = s_a_b(a);
 		}
 		else
 		{
-			if (a.items[a.top] < a.items[a.top - 1] && a.items[a.top] < a.items[a.top - 2])
+			if (a.items[a.top] < a.items[a.top - 1]
+				&& a.items[a.top] < a.items[a.top - 2])
 			{
-				*operations = ft_resize_opers(*operations, "ra");
+				*opers = ft_resize_opers(*opers, "ra");
 				a = r_a_b(a);
 				if (a.items[a.top] < a.items[a.top - 1])
 				{
-					*operations = ft_resize_opers(*operations, "sa");
+					*opers = ft_resize_opers(*opers, "sa");
 					a = s_a_b(a);
 				}
 			}
-			else if (a.items[a.top] < a.items[a.top - 1] && a.items[a.top] > a.items[a.top - 2])
-			{
-				*operations = ft_resize_opers(*operations, "sa");
-				a = s_a_b(a);
-			}
-			else if (a.items[a.top] > a.items[a.top - 1] && a.items[a.top] < a.items[a.top - 2])
-			{
-				*operations = ft_resize_opers(*operations, "rra");
-				a = r_r_a_b(a);
-			}
 			else
-			{
-				*operations = ft_resize_opers(*operations, "sa");
-				*operations = ft_resize_opers(*operations, "ra");
-				a = s_a_b(a);
-				a = r_a_b(a);
-			}
+				sort_three_reversed_helper(&a, opers);
 		}
 	}
 	return (a);
+}
+
+void	sort_three_reversed_helper(t_stack *a, char ***opers)
+{
+	if (a->items[a->top] < a->items[a->top - 1]
+		&& a->items[a->top] > a->items[a->top - 2])
+	{
+		*opers = ft_resize_opers(*opers, "sa");
+		*a = s_a_b(*a);
+	}
+	else if (a->items[a->top] > a->items[a->top - 1]
+		&& a->items[a->top] < a->items[a->top - 2])
+	{
+		*opers = ft_resize_opers(*opers, "rra");
+		*a = r_r_a_b(*a);
+	}
+	else
+	{
+		*opers = ft_resize_opers(*opers, "sa");
+		*opers = ft_resize_opers(*opers, "ra");
+		*a = s_a_b(*a);
+		*a = r_a_b(*a);
+	}
 }

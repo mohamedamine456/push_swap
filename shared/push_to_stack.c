@@ -6,17 +6,17 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:44 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/10 18:48:26 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:46:01 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
 #include "../stacks.h"
 
-void   push_to_b(t_stack *a, t_stack *b, char ***opers, int size)
+void	push_to_b(t_stack *a, t_stack *b, char ***opers, int size)
 {
 	int	index;
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size && a->top > size - 1)
@@ -29,16 +29,16 @@ void   push_to_b(t_stack *a, t_stack *b, char ***opers, int size)
 	}
 }
 
-void   push_to_a(t_stack *a, t_stack *b, char ***opers)
+void	push_to_a(t_stack *a, t_stack *b, char ***opers)
 {
 	int	index;
-	
+
 	while (b->top >= 0)
 	{
 		index = maximum_index(b->items, b->top);
 		bring_to_top_b(b, index, opers);
 		p_a_b(b, a);
-		*opers = ft_resize_opers(*opers, "pa");	
+		*opers = ft_resize_opers(*opers, "pa");
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 07:53:12 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/12 14:09:53 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/12 14:37:15 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ int	main(int argc, char **argv)
 		print_operations(opers);
 		ft_free_opers(opers);
 		free(stack_a.items);
-		while (1)
-		{
-		}
 	}
 	return (0);
 }

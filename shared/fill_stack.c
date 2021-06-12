@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:28:40 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/06/12 13:06:12 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/06/12 14:37:25 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_stack	fill_stack(int argc, char **argv)
 		number = ft_atoi(argv[i]);
 		if (in_stack(number, stack.items, stack.top)
 			|| number > INT32_MAX || number < INT32_MIN
-			|| ft_strlen(argv[i]) > 10)
+			|| ft_strlen(argv[i]) > 12)
 		{
 			free(stack.items);
 			fatal();
